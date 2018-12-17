@@ -2,7 +2,8 @@ package com.example.employeeui;
 
 import com.example.employeeui.service.EmployeeService;
 import com.example.employeeui.vo.Employee;
-import lombok.extern.log4j.Log4j2;
+//import lombok.extern.log4j.Log4j2;
+//import lombok.extern.log4j.Log4j2;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -16,7 +17,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Log4j2
+//@Log4j2
 public class EmployeeUiApplicationTests {
 	@Autowired
 	EmployeeService employeeService;
@@ -37,7 +38,7 @@ public class EmployeeUiApplicationTests {
 	public void testGetEmployee(){
 
 		List<Employee> employees = employeeService.getAllEmployee();
-		log.info(employees);
+//		log.info(employees);
 		Assert.assertNotNull(employees);
 		Assert.assertTrue(!employees.isEmpty());
 		Assert.assertEquals("Atik",employees.get(0).getFirstName());
@@ -49,7 +50,7 @@ public class EmployeeUiApplicationTests {
 	public void testUpdateEmployee(){
 
 		Boolean success = employeeService.updateEmployee(employee);
-		log.info(success);
+//		log.info(success);
 
 		Assert.assertTrue(success);
 
@@ -60,7 +61,7 @@ public class EmployeeUiApplicationTests {
 	public void deleteEmployee(){
 
 		Boolean success = employeeService.deleteEmployee(1L);
-		log.info(success);
+//		log.info(success);
 
 		Assert.assertTrue(success);
 
@@ -70,7 +71,7 @@ public class EmployeeUiApplicationTests {
 	public void addEmployee(){
 
 		Boolean success = employeeService.insertEmployee(employee);
-		log.info(success);
+//		log.info(success);
 
 		Assert.assertTrue(success);
 
