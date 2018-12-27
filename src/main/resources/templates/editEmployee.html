@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+
+<div th:fragment="editEmployee">
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">edit</button>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit employee information</h4>
+            </div>
+            <form action="#" th:action="@{/employee}" th:object="${employee}" method="post">
+                <div class="modal-body">
+
+
+
+                    <label for="firstName">First Name</label>
+                    <input type="text" th:field="*{firstName}" id="firstName"> kkkkkk
+                    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+                    <br>
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" th:field="*{lastName}" id="lastName">
+                    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+                    <br>
+
+                    <label for="age">Age</label>
+                    <input type="text" th:field="*{age}" id="age">
+                    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+                </div>
+                <div><input type="submit"></div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+</body>
+</html>

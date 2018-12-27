@@ -68,7 +68,7 @@ public class EmployeeUiApplicationTests {
 
 	@Test
 	public void addEmployee(){
-
+		employee.setId(null);
 		Boolean success = employeeService.insertEmployee(employee);
 		log.info(success);
 

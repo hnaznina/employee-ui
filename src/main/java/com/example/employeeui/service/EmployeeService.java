@@ -1,6 +1,7 @@
 package com.example.employeeui.service;
 
 import com.example.employeeui.vo.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -9,12 +10,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
 public class EmployeeService {
 
-    RestTemplate restTemplate = new RestTemplate();
+    @Autowired
+    RestTemplate restTemplate;
+
+//    @PostConstruct
+//    public void init(){
+//        restTemplate = new RestTemplate();
+//    }
 
     public List<Employee> getAllEmployee(){
 

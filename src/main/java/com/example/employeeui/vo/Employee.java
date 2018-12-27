@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 
 @Data
 @ToString
@@ -17,7 +20,7 @@ public class Employee {
 
     private Integer age;
 
-
+    @NotBlank(message = "First Name is mandatory")
     private String firstName;
 
 
